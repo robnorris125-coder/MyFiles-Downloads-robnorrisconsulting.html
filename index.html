@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rob Norris Consulting | Tennis & Sports Business Specialist</title>
+  <meta name="description" content="Discovery calls and premium audits for tennis coaches, committee members, club leaders, venue operators, and tennis business owners who want stronger retention, sharper commercial decisions, and better revenue performance." />
+  <style>
+    :root{
+      --bg:#061125;
+      --bg2:#07182f;
+      --bg3:#0c2241;
+      --panel:#0f1d33;
+      --panel2:#102341;
+      --line:rgba(255,255,255,.08);
+      --text:#f4f5f7;
+      --muted:#b0bccd;
+      --muted2:#8d9bb2;
+      --gold:#c8942d;
+      --gold2:#d5a33b;
+      --gold-soft:rgba(200,148,45,.1);
+      --shadow:0 20px 40px rgba(0,0,0,.32);
+      --max:1140px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 28% 18%, rgba(18,67,145,.18), transparent 20%),
+        linear-gradient(90deg, #07101f 0%, #07182f 35%, #07182f 65%, #07101f 100%);
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+
+    .ticker-wrap{
+      background:var(--gold);
+      color:#07101f;
+      overflow:hidden;
+      white-space:nowrap;
+      font-size:12px;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      border-bottom:1px solid rgba(0,0,0,.18);
+    }
+    .ticker{display:flex;width:max-content;animation:ticker 34s linear infinite}
+    .ticker span{padding:12px 24px;flex:0 0 auto}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(6,17,37,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+    }
+    .brand{display:flex;flex-direction:column;min-width:0}
+    .brand-top{display:flex;align-items:baseline;gap:8px;line-height:1}
+    .brand-top .name{font-family:Georgia,"Times New Roman",serif;font-size:23px;color:#efc86b;letter-spacing:.01em}
+    .brand-top .cons{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#d8dde7}
+    .brand-sub{margin-top:4px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8fa0b5}
+    .nav-links{display:flex;gap:30px;align-items:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#d5dbe6}
+    .nav-links a:hover{color:#fff}
+    .nav-cta{background:var(--gold);color:#07111f;padding:14px 20px;border-radius:14px;font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;box-shadow:0 12px 24px rgba(200,148,45,.18)}
+
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .hero{padding:48px 0 36px;border-bottom:1px solid rgba(255,255,255,.05)}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .9fr;gap:48px;align-items:start}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(200,148,45,.32);background:rgba(200,148,45,.08);color:#e1b45c;padding:11px 17px;border-radius:999px;font-size:13px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+    .eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+    h1{margin:0 0 16px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,5.1vw,76px);line-height:.97;letter-spacing:-.035em;font-weight:500}
+    .gold{color:var(--gold2)}
+    .lead{font-size:16px;line-height:1.72;color:var(--muted);margin:0 0 18px;max-width:700px}
+    .feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 28px}
+    .feature{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:15px;padding:15px}
+    .feature strong{display:block;font-size:14px;margin-bottom:6px;color:#fff}
+    .feature span{display:block;font-size:13px;line-height:1.55;color:#afbbcd}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 16px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:13px;font-size:13px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;border:1px solid transparent;transition:.2s ease}
+    .btn-primary{background:var(--gold);color:#061125}
+    .btn-secondary{background:transparent;border-color:rgba(255,255,255,.16);color:#edf1f7}
+    .btn:hover{transform:translateY(-1px)}
+    .micro{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);font-size:12px;font-weight:700;color:#dbe2ec}
+
+    .photo-card{position:relative;background:linear-gradient(180deg, rgba(18,38,69,.96), rgba(11,25,44,.96));border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:16px;box-shadow:var(--shadow);overflow:hidden}
+    .photo-card img{width:100%;height:495px;object-fit:cover;object-position:center 12%;border-radius:22px}
+    .badge{position:absolute;top:18px;right:18px;width:100px;height:100px;border-radius:50%;background:var(--gold);color:#07101f;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:900;box-shadow:0 16px 34px rgba(200,148,45,.22)}
+    .badge .big{font-size:23px;line-height:1}
+    .badge .small{font-size:10px;line-height:1.2;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+    .hero-side-info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .mini-panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:16px}
+    .mini-panel .mini-k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#d9a741;font-weight:850;margin-bottom:8px}
+    .mini-panel p{margin:0;color:#c2ccd9;font-size:13px;line-height:1.55}
+    .mini-panel strong{display:block;color:#fff;font-size:14px;margin-bottom:4px}
+
+    .section{padding:74px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .section-head{max-width:770px;margin-bottom:30px}
+    .kicker{color:#d6a23b;font-size:11px;font-weight:850;letter-spacing:.16em;text-transform:uppercase;margin-bottom:11px}
+    h2{margin:0 0 12px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,52px);line-height:1.03;letter-spacing:-.025em;font-weight:500}
+    .section-head p,.body-copy{margin:0;color:var(--muted);font-size:15px;line-height:1.76}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .card{background:linear-gradient(180deg, rgba(15,30,51,.96), rgba(11,24,43,.96));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+    .icon{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(200,148,45,.12);border:1px solid rgba(200,148,45,.26);font-size:18px;margin-bottom:14px}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:#aeb9ca;font-size:13.5px;line-height:1.62}
+
+    .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .offer-card{padding:28px;position:relative}
+    .tag{display:inline-block;padding:8px 11px;border-radius:999px;background:rgba(200,148,45,.12);border:1px solid rgba(200,148,45,.25);color:#e0b156;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.13em;margin-bottom:16px}
+    .price-row{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;margin:18px 0 16px}
+    .price{font-size:40px;font-weight:900;line-height:1;color:#fff}
+    .currency-select{margin-left:auto;background:#0c1728;color:#eef2f8;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;font-weight:700}
+    .offer-list{list-style:none;padding:0;margin:18px 0 24px}
+    .offer-list li{position:relative;padding-left:24px;color:#d3dbe6;font-size:14px;line-height:1.55;margin-bottom:10px}
+    .offer-list li:before{content:"•";position:absolute;left:8px;top:-1px;color:var(--gold);font-size:18px}
+
+    .form-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+    .form-card{background:linear-gradient(180deg, rgba(15,30,51,.98), rgba(11,24,43,.98));border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:flex;flex-direction:column;gap:8px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#d7a849}
+    .field input,.field select,.field textarea{width:100%;background:#0a1627;color:#eef2f8;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 14px;font:inherit}
+    .field textarea{min-height:128px;resize:vertical}
+    .form-note{margin-top:14px;color:#9fb0c5;font-size:13px;line-height:1.7}
+    .process-list{display:grid;gap:14px;margin-top:18px}
+    .process-step{padding:16px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+    .process-step strong{display:block;margin-bottom:6px;font-size:15px}
+    .success-box{display:none;margin-top:16px;padding:16px 18px;border-radius:16px;background:rgba(200,148,45,.1);border:1px solid rgba(200,148,45,.28);color:#edf2f8}
+    .success-box.show{display:block}
+
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .stat{text-align:center;padding:22px 16px}
+    .stat .num{font-size:33px;font-weight:900;line-height:1;color:#efc15d}
+    .stat .label{margin-top:8px;color:#c5cfdd;font-size:13px;line-height:1.45}
+
+    .about-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:24px;align-items:start}
+    .about-photo{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(18,38,69,.96), rgba(11,25,44,.96));padding:14px;box-shadow:var(--shadow)}
+    .about-photo img{height:560px;width:100%;object-fit:cover;object-position:center 10%;border-radius:18px}
+    .about-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+    .point{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);padding:16px;border-radius:16px}
+    .point strong{display:block;margin-bottom:6px;font-size:14px}
+    .point span{display:block;color:#b3bfd0;font-size:13px;line-height:1.55}
+
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .quote{margin:0 0 16px;color:#eef2f7;font-size:16px;line-height:1.72}
+    .quote-meta{font-size:13px;color:#98a7bc}
+    .contact-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+    .contact-chip{display:inline-flex;align-items:center;gap:10px;padding:12px 15px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);font-size:14px;font-weight:750;color:#edf2f8}
+    .contact-chip svg{width:18px;height:18px;fill:#d5a33b;flex:0 0 auto}
+    .faq{display:grid;gap:14px}
+    details{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px 20px}
+    summary{cursor:pointer;font-weight:850;color:#f2f5fa}
+    details p{margin:12px 0 0;color:#b8c2d0;font-size:14px;line-height:1.68}
+    footer{padding:32px 0 52px;color:#8ea0b7}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+    .smallprint{max-width:780px;font-size:12px;line-height:1.7}
+
+    @media (max-width:1040px){
+      .nav{flex-wrap:wrap}
+      .nav-links{order:3;width:100%;justify-content:space-between;gap:14px;font-size:12px}
+      .hero-grid,.offer-grid,.about-grid,.grid-3,.grid-4,.testimonial-grid,.stats,.form-wrap{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:720px){
+      .ticker-wrap{font-size:10px}
+      .nav{padding:14px}
+      .brand-top .name{font-size:18px}
+      .brand-top .cons{font-size:9px}
+      .brand-sub{font-size:8px}
+      .nav-links{display:none}
+      .nav-cta{padding:11px 14px;font-size:11px;border-radius:12px}
+      .container{padding:0 14px}
+      .hero{padding:18px 0 16px}
+      .hero-grid{grid-template-columns:1fr;gap:12px}
+      .hero-visual{order:-1}
+      .photo-card{padding:8px;border-radius:18px}
+      .photo-card img{height:300px;border-radius:14px;object-position:center 12%}
+      .badge{width:58px;height:58px;top:10px;right:10px}
+      .badge .big{font-size:16px}
+      .badge .small{font-size:6px}
+      .hero-side-info{grid-template-columns:1fr}
+      .form-wrap,.form-grid{grid-template-columns:1fr}
+      .mini-panel{padding:12px;border-radius:12px}
+      .mini-panel .mini-k{font-size:9px}
+      .mini-panel strong{font-size:13px}
+      .mini-panel p{font-size:12px}
+      .eyebrow{font-size:10px;padding:8px 12px;margin-bottom:12px}
+      h1{font-size:31px;line-height:1.04;margin-bottom:12px}
+      .lead{font-size:13px;line-height:1.66}
+      .feature-list,.grid-3,.grid-4,.offer-grid,.about-grid,.about-points,.form-grid,.testimonial-grid,.stats{grid-template-columns:1fr}
+      .feature{padding:12px;border-radius:12px}
+      .feature strong{font-size:13px}
+      .feature span{font-size:12px}
+      .btn{padding:12px 14px;font-size:11px;border-radius:12px}
+      .pill{font-size:10px;padding:7px 9px}
+      .section{padding:34px 0}
+      .section-head{margin-bottom:18px}
+      .kicker{font-size:10px}
+      h2{font-size:24px;line-height:1.08}
+      .section-head p,.body-copy,.card p,.quote{font-size:13px;line-height:1.66}
+      .card,.offer-card,.stat,.point,details{padding:14px}
+      .card h3{font-size:15px}
+      .icon{width:32px;height:32px;font-size:16px;margin-bottom:10px}
+      .price{font-size:28px}
+      .currency-select{margin-left:0;font-size:11px;padding:8px 10px}
+      .offer-list li{font-size:12px}
+      .stat .num{font-size:24px}
+      .stat .label,.quote-meta,.contact-chip{font-size:12px}
+      .about-photo{padding:8px;border-radius:18px}
+      .about-photo img{height:320px;border-radius:14px}
+      details p{font-size:12px}
+      .smallprint{font-size:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="ticker-wrap" aria-label="Key highlights">
+    <div class="ticker">
+      <span>50+ clubs and coaches supported</span>
+      <span>Free discovery call and full performance audit</span>
+      <span>Average revenue uplift claim: +17%</span>
+      <span>Limited audit capacity each month</span>
+      <span>30+ years in tennis and sports business</span>
+      <span>Tennis clubs and coaches: stop leaving revenue on the table</span>
+      <span>50+ clubs and coaches supported</span>
+      <span>Free discovery call and full performance audit</span>
+      <span>Average revenue uplift claim: +17%</span>
+      <span>Limited audit capacity each month</span>
+      <span>30+ years in tennis and sports business</span>
+      <span>Tennis clubs and coaches: stop leaving revenue on the table</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Rob Norris Consulting home">
+        <div class="brand-top"><span class="name">Rob Norris</span><span class="cons">Consulting</span></div>
+        <div class="brand-sub">Tennis &amp; Sports Business Specialist</div>
+      </a>
+      <nav class="nav-links">
+        <a href="#who-it-helps">Who It Helps</a>
+        <a href="#start-here">Start Here</a>
+        <a href="#discovery-call">Discovery Call</a>
+        <a href="#audit">The Audit</a>
+        <a href="#results">Results</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="nav-cta" href="https://calendly.com/robnorrisdiscoverycall/30min" target="_blank" rel="noopener">Book Call →</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Revenue, Retention &amp; Growth for Tennis Businesses</div>
+            <h1>Your Tennis Business Is Leaving <span class="gold">Money on the Table</span><br>Here’s Exactly Where, and How to Fix It</h1>
+            <p class="lead">I help tennis coaches, committee members, club leaders, tennis business owners, academies, venue operators, and sports organisations uncover hidden revenue leaks, improve retention, sharpen commercial decisions, and build clearer growth plans through a focused discovery process and a premium full audit.</p>
+
+            <div class="feature-list">
+              <div class="feature"><strong>Find lost revenue</strong><span>See where money is being missed across pricing, pathways, programme design, packages, court usage, and customer value.</span></div>
+              <div class="feature"><strong>Improve retention</strong><span>Spot drop-off points and tighten the journey for players, members, parents, adult clients, and club communities.</span></div>
+              <div class="feature"><strong>Grow coaching income</strong><span>Increase session uptake, package value, diary efficiency, and commercial confidence without adding more chaos.</span></div>
+              <div class="feature"><strong>Get a sharper plan</strong><span>Know what to fix first, what is underperforming, and which changes are most likely to move the numbers fastest.</span></div>
+            </div>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://calendly.com/robnorrisdiscoverycall/30min" target="_blank" rel="noopener">Book Your Free Discovery Call</a>
+              <a class="btn btn-secondary" href="#audit">View Full Audit</a>
+            </div>
+
+            <div class="micro">
+              <span class="pill">Tennis coaches</span>
+              <span class="pill">Committee members</span>
+              <span class="pill">Club leaders</span>
+              <span class="pill">Tennis business owners</span>
+              <span class="pill">Academies &amp; operators</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="photo-card">
+              <img src="IMG_2568.JPG" alt="Rob Norris holding a tennis racket on court">
+              <div class="badge"><div class="big">30+</div><div class="small">Years<br>Experience</div></div>
+            </div>
+            <div class="hero-side-info">
+              <div class="mini-panel">
+                <div class="mini-k">What Rob Helps Solve</div>
+                <strong>Revenue that feels stuck, retention that feels fragile, and growth decisions that feel unclear</strong>
+                <p>Rob helps identify what is costing you money, what is weakening the player or member journey, and where the biggest commercial improvements can be made first.</p>
+              </div>
+              <div class="mini-panel">
+                <div class="mini-k">Who It Is For</div>
+                <strong>Coaches, clubs, committees, owners, leaders, and operators who want stronger performance</strong>
+                <p>Best suited to people responsible for participation, member value, coaching income, programme growth, and the overall commercial health of the business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="who-it-helps">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Who It Helps</div>
+          <h2>For the People Who Need Better Results, Better Retention, and Better Commercial Decisions</h2>
+          <p>Clear, practical support for tennis-led businesses and sport organisations that want stronger revenue, a better player or member journey, and more confidence in what to improve next.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><div class="icon">🎾</div><h3>Tennis Coaches</h3><p>For coaches who want to improve programme structure, increase uptake, strengthen player retention, and make their coaching offer commercially stronger.</p></div>
+          <div class="card"><div class="icon">🏛️</div><h3>Committee Members</h3><p>For committees that need an objective, experienced view of what is holding performance back, where opportunities sit, and what should be prioritised first.</p></div>
+          <div class="card"><div class="icon">📈</div><h3>Tennis Business Owners</h3><p>For owners and operators who want clearer systems, sharper pricing, better positioning, stronger retention, and better commercial outcomes across the business.</p></div>
+          <div class="card"><div class="icon">🏟️</div><h3>Club Managers &amp; Leaders</h3><p>For managers, directors, and leadership teams who want stronger member value, cleaner operations, and a clearer strategy for sustainable growth.</p></div>
+          <div class="card"><div class="icon">🧭</div><h3>Academies &amp; Programme Directors</h3><p>For performance and participation programmes that need a better commercial model around pathways, staffing, pricing, capacity, and retention.</p></div>
+          <div class="card"><div class="icon">🌍</div><h3>Venue Operators &amp; Sports Organisations</h3><p>For racquets venues, leisure sites, and sport businesses looking for a sharper commercial lens, stronger customer journeys, and more effective monetisation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="start-here">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Start Here</div>
+          <h2>Start with Clarity, Then Choose the Right Level of Support</h2>
+          <p>Most clubs, coaches, and operators do not need more activity. They need clear outside insight on what is holding growth back, where value is being lost, and what changes are most likely to improve performance.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><div class="icon">1</div><h3>Book the discovery call</h3><p>Use the free 30-minute call to explain your current setup, the challenges you are facing, and what growth or retention issues you want to improve.</p></div>
+          <div class="card"><div class="icon">2</div><h3>Get an expert initial view</h3><p>Rob will identify patterns, ask sharper questions, and help you understand whether the issue sits in pricing, programming, positioning, retention, delivery, or structure.</p></div>
+          <div class="card"><div class="icon">3</div><h3>Move into the full audit</h3><p>If the fit is right, the audit gives you a more detailed, commercial breakdown of what is happening, what needs to change, and where the biggest opportunities are.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="discovery-call">
+      <div class="container">
+        <div class="offer-grid">
+          <div class="card offer-card">
+            <div class="tag">Free Discovery Call</div>
+            <h2 style="font-size:40px;margin-bottom:10px">A Free Discovery Call Focused on What Is Holding Your Business Back</h2>
+            <p class="body-copy">This call is designed to help you talk through your current setup, the challenges you are dealing with, and the opportunities you may be missing. You will leave with a clearer view of where the pressure points are and whether a full audit is the right next step.</p>
+            <ul class="offer-list">
+              <li>Talk through your current club, coaching, or business setup with an experienced outside perspective</li>
+              <li>Identify where revenue may be leaking and where stronger retention could improve results</li>
+              <li>Explore issues around pricing, programme design, participation, member value, and growth</li>
+              <li>Understand what support would be most useful from this point forward</li>
+            </ul>
+            <a class="btn btn-primary" href="https://calendly.com/robnorrisdiscoverycall/30min" target="_blank" rel="noopener">Book Your Discovery Call</a>
+          </div>
+
+          <div class="card offer-card" id="audit">
+            <div class="tag">Premium Full Audit</div>
+            <h2 style="font-size:40px;margin-bottom:10px">A Premium Audit That Shows Exactly Where Revenue, Retention, and Growth Opportunity Are Being Missed</h2>
+            <p class="body-copy">This is a detailed commercial review for tennis clubs, coaches, committees, owners, and operators who want more than general advice. It is designed to uncover what is limiting performance, what is costing money, and what changes can create the strongest return.</p>
+            <div class="price-row">
+              <div class="price" id="priceDisplay">£495</div>
+              <select class="currency-select" id="currencySelect" aria-label="Select currency">
+                <option value="GBP">GBP</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </div>
+            <ul class="offer-list">
+              <li>Review of pricing, programmes, packages, pathways, utilisation, and the strength of your overall offer</li>
+              <li>Detailed look at retention pressure points across the player, parent, client, or member journey</li>
+              <li>Commercial analysis of coaching income, membership value, programme mix, positioning, and missed opportunities</li>
+              <li>A prioritised action plan so you know what matters most, what to improve first, and where better results are most likely to come from</li>
+            </ul>
+            <a class="btn btn-secondary" href="mailto:robnorris125@google.com?subject=Premium%20Audit%20Enquiry%20%7C%20Rob%20Norris%20Consulting&body=Hello%20Rob%2C%0A%0AI%20would%20like%20to%20enquire%20about%20the%20Premium%20Audit.%0A%0ABusiness%20or%20club%20name%3A%0ARole%3A%0ACountry%3A%0ACurrent%20challenge%3A%0AWhat%20I%20would%20like%20help%20with%3A%0A%0AThank%20you." >Start the Audit Enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Results &amp; Value</div>
+          <h2>Focused on the Numbers Behind Better Tennis Businesses</h2>
+          <p>Good commercial support is not about noise. It is about uncovering what is being missed, strengthening what already works, and helping leaders make better decisions with more confidence.</p>
+        </div>
+        <div class="stats">
+          <div class="card stat"><div class="num">30+</div><div class="label">Years across tennis and sport</div></div>
+          <div class="card stat"><div class="num">50+</div><div class="label">Clubs and coaches supported</div></div>
+          <div class="card stat"><div class="num">+17%</div><div class="label">Average revenue uplift claim</div></div>
+          <div class="card stat"><div class="num">UK +</div><div class="label">International experience</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <div class="section-head" style="margin-bottom:20px">
+              <div class="kicker">About Rob</div>
+              <h2>30+ Years of Tennis, Commercial, and Practical Growth Experience</h2>
+              <p>Rob Norris brings more than three decades of experience across tennis, coaching, club environments, sports leadership, commercial development, and practical business improvement. He is trusted for his ability to look beneath the surface, identify what is really holding progress back, and help people move forward with more clarity, more confidence, and a stronger commercial plan. Rob combines deep industry understanding with practical business judgement, which means his advice is not generic. It is grounded, relevant, and designed to help real people solve real growth problems.</p>
+            </div>
+            <p class="body-copy">That means looking well beyond surface-level fixes. It means understanding how pricing, pathways, programme structure, staffing, scheduling, customer experience, participation, retention, funding, and commercial positioning all connect. For many clubs and coaches, the issue is not a lack of effort. It is that too many important decisions are being made without a clear outside view. Rob helps bring that view. His role is to help you understand what is happening, why it is happening, and what to do next so that time, energy, and investment are focused in the right places.</p>
+            <div class="about-points">
+              <div class="point"><strong>Deep tennis context</strong><span>Experience that speaks directly to the realities of clubs, coaches, programmes, committees, academies, venues, and tennis-led operations.</span></div>
+              <div class="point"><strong>Commercial perspective</strong><span>A focus on revenue, retention, utilisation, perceived value, customer journey, funding opportunities, and the decisions that create stronger long-term outcomes.</span></div>
+              <div class="point"><strong>Practical recommendations</strong><span>Advice designed to be useful in the real world, not vague theory that sounds good and changes nothing.</span></div>
+              <div class="point"><strong>Trusted sounding board</strong><span>Experienced support for people carrying responsibility and wanting a clear, credible view before committing more time, budget, or strategic energy.</span></div>
+            </div>
+
+            <div class="contact-row">
+              <a class="contact-chip" href="mailto:robnorris125@google.com?subject=Enquiry%20from%20the%20Rob%20Norris%20Consulting%20website&body=Hello%20Rob%2C%0A%0AI%20am%20getting%20in%20touch%20via%20your%20website.%0A%0AName%3A%0AOrganisation%3A%0ARole%3A%0ACountry%3A%0AWhat%20I%20would%20like%20help%20with%3A%0A%0ABest%20regards%2C">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.51l9 5.4 9-5.4V7l-9 5.4L3 7z"></path></svg>
+                robnorris125@google.com
+              </a>
+              <a class="contact-chip" href="https://www.linkedin.com/in/rob-norrisuk/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3zM20.44 13.03c0-3.23-1.72-4.73-4.02-4.73-1.85 0-2.68 1.02-3.14 1.73V8.5H9.9V20h3.38v-6.4c0-1.69.32-3.32 2.4-3.32 2.05 0 2.08 1.92 2.08 3.43V20h3.38l-.7-6.97z"></path></svg>
+                LinkedIn / rob-norrisuk
+              </a>
+            </div>
+          </div>
+          <div class="about-photo">
+            <img src="IMG_2568.JPG" alt="Rob Norris on court with tennis racket">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Client Feedback</div>
+          <h2>Trusted Insight That Creates Real Momentum</h2>
+          <p>When people invest time in a discovery call or a premium audit, they want clear thinking, practical direction, and advice that helps them move forward with more confidence. These testimonials reflect the kind of value Rob aims to deliver.</p>
+        </div>
+        <div class="testimonial-grid">
+          <div class="card">
+            <p class="quote">“Rob identified two funding programmes we were eligible for that we'd never heard of. We applied for both and successfully secured funding for facility improvements we thought we couldn't afford.”</p>
+            <div class="quote-meta">Club Chairman • Community Tennis Club, Northern England • ★★★★★</div>
+          </div>
+          <div class="card">
+            <p class="quote">“Rob helped us see our club clearly for the first time. His report was direct and practical. It gave us a clear path forward when we'd been going round in circles for months.”</p>
+            <div class="quote-meta">Head of Tennis • Regional Tennis Academy • ★★★★★</div>
+          </div>
+          <div class="card">
+            <p class="quote">“The free discovery call alone gave me more clarity than six months of trying to figure it out myself. Rob is straightforward and genuinely invested in helping you improve.”</p>
+            <div class="quote-meta">Tennis Coach • Coaching Programme, UK • ★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" id="audit-enquiry">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Audit Enquiry</div>
+          <h2>Tell Rob What You Want to Improve and Receive Clear Next Steps</h2>
+          <p>When someone is interested in the premium audit, they should be able to explain who they are, what they are responsible for, and what they want to achieve. This form is designed to make that first step feel professional, clear, and easy to complete.</p>
+        </div>
+        <div class="form-wrap">
+          <div class="form-card">
+            <form id="auditForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Your Name</label>
+                  <input id="name" name="name" required placeholder="Full name">
+                </div>
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input id="email" name="email" type="email" required placeholder="your@email.com">
+                </div>
+                <div class="field">
+                  <label for="organisation">Club / Business / Organisation</label>
+                  <input id="organisation" name="organisation" required placeholder="Organisation name">
+                </div>
+                <div class="field">
+                  <label for="role">Your Role</label>
+                  <select id="role" name="role" required>
+                    <option value="">Select your role</option>
+                    <option>Tennis Coach</option>
+                    <option>Committee Member</option>
+                    <option>Club Owner</option>
+                    <option>Club Manager</option>
+                    <option>Head of Tennis</option>
+                    <option>Programme Director</option>
+                    <option>Academy Leader</option>
+                    <option>Venue Operator</option>
+                    <option>Sports Business Owner</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="country">Country</label>
+                  <input id="country" name="country" required placeholder="Country">
+                </div>
+                <div class="field">
+                  <label for="phone">Phone / WhatsApp</label>
+                  <input id="phone" name="phone" placeholder="Optional">
+                </div>
+                <div class="field full">
+                  <label for="goals">What are you looking to achieve?</label>
+                  <textarea id="goals" name="goals" required placeholder="Tell Rob what you want to improve, where things feel stuck, and what outcome you would most like to achieve."></textarea>
+                </div>
+                <div class="field full">
+                  <label for="challenges">Current challenges</label>
+                  <textarea id="challenges" name="challenges" placeholder="Examples: retention, low coaching uptake, weak member value, flat revenue, underused court time, pricing, programming, structure, or growth planning."></textarea>
+                </div>
+              </div>
+              <div class="cta-row" style="margin-top:18px">
+                <button type="submit" class="btn btn-primary">Send Audit Enquiry</button>
+                <a href="mailto:robnorris125@google.com?subject=Premium%20Audit%20Enquiry%20%7C%20Rob%20Norris%20Consulting" class="btn btn-secondary">Email Rob Directly</a>
+              </div>
+              <div class="form-note">Submitting this will open a prepared email to Rob with all the key information included. A confirmation message will also appear on this page explaining what happens next, so the process feels clear and professional for the person enquiring.</div>
+              <div id="auditSuccess" class="success-box">
+                <strong>Thank you. Your enquiry is ready to send.</strong><br>
+                Your email draft has been prepared for Rob Norris. Once you send it, Rob can review your information and come back to you with the best next step. In the meantime, you can also book a free discovery call if you would like to talk things through sooner.
+              </div>
+            </form>
+          </div>
+          <div class="form-card">
+            <div class="kicker" style="margin-bottom:10px">What Happens Next</div>
+            <h3 style="margin:0 0 10px;font-size:28px;font-family:Georgia, 'Times New Roman', serif;font-weight:500;line-height:1.08">A Better Enquiry Process Creates More Confidence</h3>
+            <p class="body-copy">The audit should feel premium from the very first interaction. That means giving Rob enough context to understand your situation properly and giving you a clear idea of how the next steps work.</p>
+            <div class="process-list">
+              <div class="process-step"><strong>1. You outline your situation</strong><span style="color:#b8c2d0;font-size:13px;line-height:1.65">Share who you are, what you are responsible for, and what results you are looking to improve.</span></div>
+              <div class="process-step"><strong>2. Rob reviews your enquiry</strong><span style="color:#b8c2d0;font-size:13px;line-height:1.65">Rob can quickly understand whether the premium audit is the right fit and what areas are likely to matter most.</span></div>
+              <div class="process-step"><strong>3. You receive direction on how to proceed</strong><span style="color:#b8c2d0;font-size:13px;line-height:1.65">That may be a recommendation to book the free discovery call first, move into the audit, or clarify a few details before the work begins.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Common Questions</div>
+          <h2>Questions People Often Ask Before Booking</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Who is this most useful for?</summary>
+            <p>The strongest fit is for tennis coaches, committee members, club managers, tennis business owners, programme directors, academies, and operators who know there is room for stronger retention, better structure, and better commercial performance.</p>
+          </details>
+          <details>
+            <summary>What happens on the free discovery call?</summary>
+            <p>You talk through your current setup, your challenges, and what you want to improve. Rob helps you understand where the main pressure points may be, where opportunities may be sitting, and what kind of support would be most useful from there.</p>
+          </details>
+          <details>
+            <summary>Is the audit only for the UK?</summary>
+            <p>No. The website is structured for international interest too, and the pricing display includes a currency selector for visitors in different regions.</p>
+          </details>
+          <details>
+            <summary>Can this help if revenue is flat but things are busy?</summary>
+            <p>Yes. Busy does not always mean commercially efficient. This work is especially valuable when programmes are full of activity but retention, utilisation, pricing, or customer value are not converting strongly enough.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="brand-top" style="margin-bottom:8px"><span class="name">Rob Norris</span><span class="cons">Consulting</span></div>
+        <div class="brand-sub">Tennis &amp; Sports Business Specialist</div>
+      </div>
+      <div class="smallprint">
+        © <span id="year"></span> Rob Norris Consulting. All rights reserved. Content, design, structure, and written material on this website are protected by copyright and may not be copied, reproduced, distributed, or adapted without prior written permission. This notice helps protect the site, but it does not create absolute prevention against copying.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const rates = { GBP: 1, USD: 1.27, EUR: 1.17, AUD: 1.94 };
+    const symbols = { GBP: '£', USD: '$', EUR: '€', AUD: 'A$' };
+    const baseGBP = 495;
+    const select = document.getElementById('currencySelect');
+    const priceDisplay = document.getElementById('priceDisplay');
+    function updatePrice(){
+      const currency = select.value;
+      const amount = Math.round(baseGBP * rates[currency]);
+      priceDisplay.textContent = `${symbols[currency]}${amount}`;
+    }
+    if(select){ select.addEventListener('change', updatePrice); updatePrice(); }
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    const auditForm = document.getElementById('auditForm');
+    if(auditForm){
+      auditForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          organisation: document.getElementById('organisation').value.trim(),
+          role: document.getElementById('role').value.trim(),
+          country: document.getElementById('country').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          goals: document.getElementById('goals').value.trim(),
+          challenges: document.getElementById('challenges').value.trim()
+        };
+        const subject = encodeURIComponent('Premium Audit Enquiry | Rob Norris Consulting | ' + (data.organisation || data.name));
+        const body = encodeURIComponent(
+`Hello Rob,
+
+I would like to enquire about the Premium Audit.
+
+Name: ${data.name}
+Email: ${data.email}
+Organisation: ${data.organisation}
+Role: ${data.role}
+Country: ${data.country}
+Phone / WhatsApp: ${data.phone || 'Not provided'}
+
+What I am looking to achieve:
+${data.goals}
+
+Current challenges:
+${data.challenges || 'Not provided'}
+
+Please let me know the best next step.
+
+Best regards,
+${data.name}`
+        );
+        const href = `mailto:robnorris125@google.com?subject=${subject}&body=${body}`;
+        window.location.href = href;
+        document.getElementById('auditSuccess').classList.add('show');
+      });
+    }
+
+  </script>
+</body>
+</html>
